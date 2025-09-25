@@ -1,0 +1,7 @@
+/.lh
+/nbproject/private/
+/vendor
+/nbproject
+/.history
+/test-config-local.php
+/auth.json

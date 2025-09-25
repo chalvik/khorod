@@ -1,0 +1,1 @@
+docker-compose exec -w/app/yii2-kg-developer-challenge app ./vendor/bin/codecept %*
