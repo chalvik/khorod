@@ -10,7 +10,7 @@
    - Возвращает массив с ключами:  
      - **order\_id** — идентификатор заказа (orders.id).  
      - **user\_id** — идентификатор пользователя (orders.user\_id).  
-     - **created\_at** — дата/время создания заказа (orders.created\_at), строка в формате 'YYYY-MM-DD HH:MM:SS' или ISO 8601.  
+     - **created\_at** — дата/время создания заказа (orders.created\_at), Unix timestamp.  
      - **total\_from\_items** — сумма по позициям заказа: SUM(quantity \* unit\_price) по order\_items для данного order\_id; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
      - **total\_from\_orders** — значение поля orders.total из таблицы orders (заявленная итоговая сумма заказа); возвращать с точностью до 2 знаков.  
      - **items\_count** — количество позиций в заказе (COUNT(\*) по order\_items для данного order\_id).  
