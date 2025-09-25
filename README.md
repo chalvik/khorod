@@ -3,7 +3,7 @@
 Среда для выполнения тестового задания для PHP-разработчика компании «Красивый город».
 
 ## Суть задания
-Реализовать три обязательных публичных методов в классе src/PublicApi/DeveloperChallengeApi. Входные данные — таблицы orders и order\_items (миграции нужны).
+Реализовать три обязательных публичных метода в классе src/PublicApi/DeveloperChallengeApi. Входные данные — таблицы orders и order\_items (миграции нужны).
 
 ## Требуемые методы (в DeveloperChallengeApi)
 1. `getOrderSummary(int $orderId): array`  
