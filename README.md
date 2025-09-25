@@ -16,9 +16,7 @@
      - **total\_from\_items** — сумма по позициям заказа: SUM(quantity \* unit\_price) по order\_items для данного order\_id; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
      - **total\_from\_orders** — значение поля orders.total из таблицы orders (заявленная итоговая сумма заказа); возвращать с точностью до 2 знаков.  
      - **items\_count** — количество позиций в заказе (COUNT(\*) по order\_items для данного order\_id).  
-     - **price\_diff** — разница: total\_from\_orders - total\_from\_items, округлённая до 2 знаков.  
-   - **total\_from\_items** = sum(quantity \* unit\_price) по позициям заказа.  
-   - **price\_diff** = total\_from\_orders - total\_from\_items.
+     - **price\_diff** — разница: total\_from\_orders - total\_from\_items, округлённая до 2 знаков. 
 
 2. `listOrdersByUser(int $userId, int $limit = 10): array ` 
    - Возвращает массив заказов пользователя (до $limit). Для каждого заказа вернуть:  
@@ -35,7 +33,7 @@
      - **tax\_rate** — значение taxRate, как передано (например, 0.20 для 20%).  
      - **tax\_amount** — налог, вычисляемый как round(subtotal \* tax\_rate, 2).  
      - **total\_with\_tax** — subtotal + tax\_amount, округлённое до 2 знаков.  
-   - **subtotal** определяется как в getOrderSummary.
+     - **subtotal** определяется как **total_from_orders** в getOrderSummary.
 
 Все три метода обязательны и должны возвращать plain arrays.
 
