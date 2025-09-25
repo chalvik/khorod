@@ -2,6 +2,8 @@
 
 Среда для выполнения тестового задания для PHP-разработчика компании «Красивый город».
 
+Для выполнения задания сделайте [форк проекта](https://gitlab.com/kgorod-public-projects/kgorod-php-developer-challenge/-/forks/new).
+
 ## Суть задания
 Реализовать три обязательных публичных метода в классе src/PublicApi/DeveloperChallengeApi. Входные данные — таблицы orders и order\_items (миграции нужны).
 
