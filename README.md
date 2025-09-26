@@ -33,7 +33,7 @@
      - **`order_id`** — идентификатор заказа (`orders.id`).  
      - **`user_id`** — идентификатор пользователя (`orders.user_id`).  
      - **`created_at`** — дата/время создания заказа (`orders.created_at`), Unix timestamp.  
-     - **`total_from_items`** — сумма по позициям заказа: `SUM(quantity * unit_price)` по `order_items` для данного order_id; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
+     - **`total_from_items`** — сумма по позициям заказа: `SUM(quantity * unit_price)` по `order_items` для данного `order_id`; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
      - **`total_from_orders`** — значение поля `orders.total` из таблицы `orders` (заявленная итоговая сумма заказа); возвращать с точностью до 2 знаков.  
      - **`items_count`** — количество позиций в заказе (`COUNT(*)` по `order_items` для данного `order_id`).  
      - **`price_diff`** — разница: `total_from_orders - total_from_items`, округлённая до 2 знаков. 
