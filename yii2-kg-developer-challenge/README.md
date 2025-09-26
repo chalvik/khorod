@@ -19,7 +19,7 @@ docker-compose exec -w/app/yii2-kg-developer-challenge app ./vendor/bin/codecept
 ```sh
 docker-compose exec -w/app/yii2-kg-developer-challenge app php tests/bin/yii gii/model --tableName=some_table --modelClass=SomeClass --ns="KGorod\\DeveloperChallenge\\Models" --generateRelations=none --useTablePrefix=1 --generateRelationsFromCurrentSchema=0 --generateQuery=1 --queryNs="KGorod\\DeveloperChallenge\\Models\\Queries" --queryClass=SomeQueryClass --template=default
 ```
-> **Примечание**
+> ##### Примечание
 > В среде Windows замените сдвоенные слеши на одинарные.
 
 ## Миграции
@@ -28,7 +28,7 @@ docker-compose exec -w/app/yii2-kg-developer-challenge app php tests/bin/yii gii
 docker-compose exec -w/app/yii2-kg-developer-challenge app php tests/bin/yii migrate/create KGorod\\DeveloperChallenge\\Migrations\\<migration_name> --fields="..."
 ```
 
-> **Примечание**
+> ##### Примечание
 > В среде Windows замените сдвоенные слеши на одинарные.
 
 ### Выполнение миграции

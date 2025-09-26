@@ -14,7 +14,7 @@
 - сделайте [форк проекта](https://gitlab.com/kgorod-public-projects/kgorod-php-developer-challenge/-/forks/new);
 - разверните среду выполнения с конфигурацией в прилагаемом файле `docker-compose.yml`;
   
-> **Примечание**
+> ##### Примечание
 > Для настройки среды используйте указания, содержащиеся в файле [README.md шаблона пакета](yii2-kg-developer-challenge/README.md).
 
 - выполните указанные в настоящем документе задания; 
@@ -62,10 +62,10 @@
 - Реализованный src/PublicApi/DeveloperChallengeApi с тремя методами (см. выше).
 - Тесты Codeception (tests/), покрывающие корректность вычислений и поведение методов.
 
-> **Примечание**
+> ##### Примечание
 > Примеры команд для генерации миграций и моделей и выполнения тестов приводятся в файле [README.md шаблона пакета](yii2-kg-developer-challenge/README.md).
 
-> **Примечание**
+> ##### Примечание
 > Пример теста Codeception приводится в файле [ExampleTest.php](yii2-kg-developer-challenge/tests/acceptance/ExampleTest.php).
 
 ## Ограничения и требования к реализации
