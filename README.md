@@ -9,7 +9,7 @@
 - Docker;
 - Codeception;
 - GitLab.
-- 
+
 Для выполнения задания: 
 - сделайте [форк проекта](https://gitlab.com/kgorod-public-projects/kgorod-php-developer-challenge/-/forks/new);
 - разверните среду выполнения с конфигурацией в прилагаемом файле `docker-compose.yml`;
@@ -62,6 +62,9 @@
 
 > **Примечание**
 > Примеры команд для генерации миграций и моделей и выполнения тестов приводятся в файле [README.md шаблона пакета](yii2-kg-developer-challenge/README.md).
+
+> **Примечание**
+> Пример теста Codeception приводится в файле [ExampleTest.php](yii2-kg-developer-challenge/tests/acceptance/ExampleTest.php).
 
 ## Ограничения и требования к реализации
 - Репозитории возвращают только массивы (по строкам таблиц).
