@@ -24,13 +24,6 @@ $config =  [
             'migrationNamespaces' => [
                 'KGorod\\DeveloperChallenge\\Migrations',
             ],
-            'generatorTemplateFiles' => [
-                'create_table' => '@KGorod/Core/MigrationTemplates/createTableMigration.php',
-                'drop_table' => '@yii/views/dropTableMigration.php',
-                'add_column' => '@KGorod/Core/MigrationTemplates/addColumnMigration.php',
-                'drop_column' => '@yii/views/dropColumnMigration.php',
-                'create_junction' => '@yii/views/createTableMigration.php',
-            ],
         ],
     ],
     'modules' => [
