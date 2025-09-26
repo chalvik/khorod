@@ -25,42 +25,41 @@
 ## Суть задания
 В каталоге yii2-kg-developer-challenge содержится шаблон пакета Yii2 для выполнения тестового задания.
 
-Реализовать три обязательных публичных метода в классе src/PublicApi/DeveloperChallengeApi. Входные данные — таблицы orders и order\_items (миграции нужны).
+Реализовать три обязательных публичных метода в классе `src/PublicApi/DeveloperChallengeApi`. Входные данные — таблицы `orders` и `order_items` (миграции нужны).
 
 ## Требуемые методы (в DeveloperChallengeApi)
 1. `getOrderSummary(int $orderId): array`  
    - Возвращает массив с ключами:  
-     - **order\_id** — идентификатор заказа (orders.id).  
-     - **user\_id** — идентификатор пользователя (orders.user\_id).  
-     - **created\_at** — дата/время создания заказа (orders.created\_at), Unix timestamp.  
-     - **total\_from\_items** — сумма по позициям заказа: SUM(quantity \* unit\_price) по order\_items для данного order\_id; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
-     - **total\_from\_orders** — значение поля orders.total из таблицы orders (заявленная итоговая сумма заказа); возвращать с точностью до 2 знаков.  
-     - **items\_count** — количество позиций в заказе (COUNT(\*) по order\_items для данного order\_id).  
-     - **price\_diff** — разница: total\_from\_orders - total\_from\_items, округлённая до 2 знаков. 
+     - **`order_id`** — идентификатор заказа (`orders.id`).  
+     - **`user_id`** — идентификатор пользователя (`orders.user_id`).  
+     - **`created_at`** — дата/время создания заказа (`orders.created_at`), Unix timestamp.  
+     - **`total_from_items`** — сумма по позициям заказа: `SUM(quantity * unit_price)` по `order_items` для данного order_id; возвращать с точностью до 2 знаков (число или строка '123.45'), единообразно в ответе.  
+     - **`total_from_orders`** — значение поля `orders.total` из таблицы `orders` (заявленная итоговая сумма заказа); возвращать с точностью до 2 знаков.  
+     - **`items_count`** — количество позиций в заказе (`COUNT(*)` по `order_items` для данного `order_id`).  
+     - **`price_diff`** — разница: `total_from_orders - total_from_items`, округлённая до 2 знаков. 
 
 2. `listOrdersByUser(int $userId, int $limit = 10): array ` 
-   - Возвращает массив заказов пользователя (до $limit). Для каждого заказа вернуть:  
-     - **order\_id** — orders.id.  
-     - **user\_id** — orders.user\_id.  
-     - **created\_at** — orders.created\_at.  
-     - **total\_from\_orders** — поле orders.total (заявленная итоговая сумма).  
-     - **items\_count** — количество позиций в заказе (COUNT(\*) по order\_items).  
+   - Возвращает массив заказов пользователя (до `$limit`). Для каждого заказа вернуть:  
+     - **`order_id`** — `orders.id`.  
+     - **`user_id`** — `orders.user_id`.  
+     - **`created_at`** — `orders.created_at`.  
+     - **`total_from_orders`** — поле `orders.total` (заявленная итоговая сумма).  
+     - **`items_count`** — количество позиций в заказе (`COUNT(*)` по `order_items`).  
 
 3. `calculateOrderTaxes(int $orderId, float $taxRate): array`  
    - Возвращает массив с ключами:  
-     - **order\_id** — orders.id.  
-     - **subtotal** — то же, что total\_from\_items (SUM(quantity \* unit\_price) по позициям), с точностью до 2 знаков.  
-     - **tax\_rate** — значение taxRate, как передано (например, 0.20 для 20%).  
-     - **tax\_amount** — налог, вычисляемый как round(subtotal \* tax\_rate, 2).  
-     - **total\_with\_tax** — subtotal + tax\_amount, округлённое до 2 знаков.  
-     - **subtotal** определяется как **total_from_orders** в getOrderSummary.
+     - **`order_id`** — `orders.id`.  
+     - **`subtotal`** — то же, что `total_from_items` (`SUM(quantity * unit_price)` по позициям), с точностью до 2 знаков.  
+     - **`tax_rate`** — значение `$taxRate`, как передано (например, `0.20` для 20%).  
+     - **`tax_amount`** — налог, вычисляемый как `round(subtotal * tax_rate, 2)`.  
+     - **`total_with_tax`** — `subtotal + tax_amount`, округлённое до 2 знаков.  
 
 Все три метода обязательны и должны возвращать plain arrays.
 
 ## Требуемые артефакты
-- Миграции в src/Migrations/ (Yii2 migration) для создания таблиц.
-- Реализованный src/PublicApi/DeveloperChallengeApi с тремя методами (см. выше).
-- Тесты Codeception (tests/), покрывающие корректность вычислений и поведение методов.
+- Миграции в `src/Migrations/` (Yii2 migration) для создания таблиц.
+- Реализованный `src/PublicApi/DeveloperChallengeApi` с тремя методами (см. выше).
+- Тесты Codeception (`tests/`), покрывающие корректность вычислений и поведение методов.
 
 > ##### Примечание
 > Примеры команд для генерации миграций и моделей и выполнения тестов приводятся в файле [README.md шаблона пакета](yii2-kg-developer-challenge/README.md).
