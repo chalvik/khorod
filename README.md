@@ -38,7 +38,7 @@
      - **`items_count`** — количество позиций в заказе (`COUNT(*)` по `order_items` для данного `order_id`).  
      - **`price_diff`** — разница: `total_from_orders - total_from_items`, округлённая до 2 знаков. 
 
-2. `listOrdersByUser(int $userId, int $limit = 10): array ` 
+2. `listOrdersByUser(int $userId, int $limit = 10): array` 
    - Возвращает массив заказов пользователя (до `$limit`). Для каждого заказа вернуть:  
      - **`order_id`** — `orders.id`.  
      - **`user_id`** — `orders.user_id`.  
