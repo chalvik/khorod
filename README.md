@@ -49,7 +49,7 @@
 3. `calculateOrderTaxes(int $orderId, float $taxRate): array`  
    - Возвращает массив с ключами:  
      - **`order_id`** — `orders.id`.  
-     - **`subtotal`** — то же, что `total_from_items` (`SUM(quantity * unit_price)` по позициям), с точностью до 2 знаков.  
+     - **`subtotal`** — то же, что `total_from_orders` (`SUM(quantity * unit_price)` по позициям), с точностью до 2 знаков.  
      - **`tax_rate`** — значение `$taxRate`, как передано (например, `0.20` для 20%).  
      - **`tax_amount`** — налог, вычисляемый как `round(subtotal * tax_rate, 2)`.  
      - **`total_with_tax`** — `subtotal + tax_amount`, округлённое до 2 знаков.  
