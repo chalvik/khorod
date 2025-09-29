@@ -19,14 +19,4 @@ class DeveloperChallengeApi extends BaseObject
     {
         return new static();
     }
-    
-    /**
-     * 
-     * @param int[] $ids
-     * @return array
-     */
-    public function findDeveloperChallengeByIds(array $ids): array
-    {
-        
-    }
 }
