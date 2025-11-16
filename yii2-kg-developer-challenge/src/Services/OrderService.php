@@ -37,8 +37,8 @@ class OrderService
         $dto->orderId = $order->id;
         $dto->userId = $order->user_id;
         $dto->createdAt = $order->created_at;
-        $dto->totalFromItems = number_format($sum['total_items'], 2, '.', '');
-        $dto->totalFromOrders = number_format($order->total, 2, '.', '');
+        $dto->totalFromItems = number_format((float) $sum['total_items'], 2, '.', '');
+        $dto->totalFromOrders = number_format((float)$order->total, 2, '.', '');
         $dto->itemsCount = $sum['items_count'];
         $dto->priceDiff = number_format($order->total - $sum['total_items'], 2, '.', '');
 
@@ -67,7 +67,7 @@ class OrderService
             $dto->orderId = $order->id;
             $dto->userId = $order->user_id;
             $dto->createdAt = $order->created_at;
-            $dto->totalFromOrders = number_format($order->total, 2, '.', '');
+            $dto->totalFromOrders = number_format((float) $order->total, 2, '.', '');
             $dto->itemsCount = $countMap[$order->id] ?? 0;
             $result[] = $dto;
         }

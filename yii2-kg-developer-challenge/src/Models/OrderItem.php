@@ -17,7 +17,6 @@ use yii\db\ActiveQuery;
  */
 class OrderItem extends \yii\db\ActiveRecord
 {
-
     /**
      * {@inheritdoc}
      */

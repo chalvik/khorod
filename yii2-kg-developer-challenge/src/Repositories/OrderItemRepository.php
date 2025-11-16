@@ -21,11 +21,12 @@ class OrderItemRepository implements OrderItemRepositoryInterface
                 'total_items' => new Expression('SUM(quantity * unit_price)'),
                 'items_count' => new Expression('COUNT(*)'),
             ])
+            ->asArray()
             ->one();
 
         return [
-            'total_items' => $row->total_items ?? 0,
-            'items_count' => $row->items_count ?? 0,
+            'total_items' => $row['total_items'] ?? 0,
+            'items_count' => $row['items_count'] ?? 0,
         ];
     }
 
@@ -45,11 +46,12 @@ class OrderItemRepository implements OrderItemRepositoryInterface
             ])
             ->where(['order_id' => $orderIds])
             ->groupBy(['order_id'])
+            ->asArray()
             ->all();
 
         $map = [];
         foreach ($rows as $row) {
-            $map[$row->order_id] = $row->items_count;
+            $map[$row['order_id']] = $row['items_count'];
         }
 
         return $map;

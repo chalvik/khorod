@@ -26,7 +26,7 @@ class OrderRepository implements OrderRepositoryInterface
     {
         return Order::find()
             ->where(['user_id' => $userId])
-            ->orderBy(['id' => SORT_DESC])
+            ->orderBy(['id' => SORT_ASC])
             ->limit($limit)
             ->all();
     }
