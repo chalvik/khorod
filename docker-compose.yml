@@ -13,8 +13,7 @@ services:
       - data
     depends_on:
       - db
-    entrypoint: /bin/bash
-    command: -c "/app/startup.sh && php-fpm"
+
 
   db:
     image: mysql:8.0.0

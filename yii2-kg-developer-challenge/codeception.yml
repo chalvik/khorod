@@ -8,3 +8,7 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+settings:
+  max_depth: 2
+  debug: true
+  memory_limit: 2048M
